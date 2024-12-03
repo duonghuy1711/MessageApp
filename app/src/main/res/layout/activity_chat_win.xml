@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/chatback"
+    tools:context=".chatWin">
+
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profileimgg"
+            android:layout_width="104dp"
+            android:layout_height="104dp"
+            android:src="@drawable/photocamera"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="2.6dp"
+            android:layout_marginTop="9.1dp"/>
+
+        <TextView
+            android:id="@+id/recivername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mun"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="19sp"
+            android:layout_margin="13dp"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/msgadpter"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_above="@id/ll2"
+        android:layout_below="@id/ll1"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="-7dp"
+        android:padding="13dp"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:id="@+id/ll2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="2.6dp"
+        android:layout_marginTop="2.6dp"
+        android:layout_marginBottom="2.6dp"
+        android:layout_marginEnd="2.6dp">
+
+        <ImageView
+            android:id="@+id/fileIcon"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="6.5dp"
+            android:src="@drawable/file"
+            android:onClick="onFileIconClick"
+            />
+
+        <ImageView
+            android:id="@+id/cameraIcon"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="6.5dp"
+            android:src="@drawable/cameraone"
+            android:onClick="onCameraIconClick"
+            />
+        <ImageView
+            android:id="@+id/capturedImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="150dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="6.5dp"
+            android:layout_marginEnd="6.5dp"
+            android:layout_weight="1"
+            android:layout_marginTop="7dp"
+            app:cardCornerRadius="32.5dp">
+
+            <EditText
+                android:id="@+id/textmsg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Type The Messages..."
+                android:paddingStart="10dp"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Send Button -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/sendbtnn"
+            android:layout_width="40dp"
+            android:layout_height="36dp"
+            app:cardCornerRadius="32.5dp"
+            android:layout_marginTop="7dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:src="@drawable/sendbut" />
+
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+</RelativeLayout>
